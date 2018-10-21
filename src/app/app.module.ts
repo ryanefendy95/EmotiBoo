@@ -14,9 +14,9 @@ import { WebcamNewComponent } from './webcam-new/webcam-new.component';
         WelcomeComponent,
         HomeComponent,
         GrassComponent,
-        WebcamNewComponent
+        WebcamNewComponent,
     ],
-    imports: [BrowserModule, WebcamModule],
+    imports: [BrowserModule, WebcamModule, ],
     providers: [],
     bootstrap: [AppComponent],
 })

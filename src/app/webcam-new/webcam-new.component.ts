@@ -31,7 +31,7 @@ export class WebcamNewComponent implements OnInit {
         // this.trigger.next();
         setInterval(() => {
             this.trigger.next();
-        }, 2000);
+        }, 5000);
     }
 
     public handleInitError(error: WebcamInitError): void {
