@@ -1,6 +1,6 @@
 <div>
-  <!-- <app-welcome></app-welcome> -->
-  <app-home></app-home>
-  <!-- <app-grass></app-grass> -->
-  <app-webcam-new></app-webcam-new>
+    <!-- <app-welcome></app-welcome> -->
+    <app-home [emotions]="emotions"></app-home>
+    <!-- <app-grass></app-grass> -->
+    <app-webcam-new (notify)="onNotifyClicked($event)"></app-webcam-new>
 </div>

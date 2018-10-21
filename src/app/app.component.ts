@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'emotion-radar';
+  public title = 'emotion-radar';
+  public emotions: any;
+
+  /**
+   * onNotifyClicked
+   */
+  public onNotifyClicked(emotions) {
+    this.emotions = emotions;
+  }
 }

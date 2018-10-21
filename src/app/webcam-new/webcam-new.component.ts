@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { WebcamInitError, WebcamImage, WebcamUtil } from 'ngx-webcam';
 import { Subject, Observable } from 'rxjs';
-import axios from 'axios';
 
 @Component({
     selector: 'app-webcam-new',
@@ -9,14 +8,12 @@ import axios from 'axios';
     styleUrls: ['./webcam-new.component.css'],
 })
 export class WebcamNewComponent implements OnInit {
+    @Output() notify: EventEmitter = new EventEmitter();
     public showWebcam = true;
     public multipleWebcamsAvailable = false;
     public errors: WebcamInitError[] = [];
-
-    // latest snapshot
-    public webcamImage: WebcamImage = null;
-    // webcam snapshot trigger
-    private trigger: Subject<void> = new Subject<void>();
+    public webcamImage: WebcamImage = null; // latest snapshot
+    private trigger: Subject<void> = new Subject<void>(); // webcam snapshot trigger
 
     constructor() {}
 
@@ -45,31 +42,18 @@ export class WebcamNewComponent implements OnInit {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
             headers: {
-                'Content-Type': 'text/plain; charset=UTF-8',
-                // "Content-Type": "application/x-www-form-urlencoded",
+                'Content-Type': 'text/plain; charset=UTF-8'
             },
-            body: this.webcamImage.imageAsBase64, // body data type must match "Content-Type" header
+            body: this.webcamImage.imageAsBase64, // body data type must match "Content-Type" header,
         })
             .then(d => {
-                console.log(d);
+                // console.log(d);
                 return d.json();
             })
             .then(d => {
                 console.log(d);
+                this.notify.emit(d[0].faceAttributes.emotion);
             });
-
-        // axios.post('/v1/face', {
-        //   firstName: 'Fred',
-        //   lastName: 'Flintstone'
-        // })
-        // .then(function (response) {
-        //   console.log(response);
-        // })
-        // .catch(function (error) {
-        //   console.log(error);
-        // });
-
-
     }
 
     public get triggerObservable(): Observable<void> {
