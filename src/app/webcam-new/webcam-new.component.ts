@@ -8,7 +8,8 @@ import { Subject, Observable } from 'rxjs';
     styleUrls: ['./webcam-new.component.css'],
 })
 export class WebcamNewComponent implements OnInit {
-    @Output() notify: EventEmitter = new EventEmitter();
+    @Output()
+    notify: EventEmitter<number[]> = new EventEmitter<number[]>();
     public showWebcam = true;
     public multipleWebcamsAvailable = false;
     public errors: WebcamInitError[] = [];
@@ -27,7 +28,10 @@ export class WebcamNewComponent implements OnInit {
     }
 
     public triggerSnapshot(): void {
-        this.trigger.next();
+        // this.trigger.next();
+        setInterval(() => {
+            this.trigger.next();
+        }, 2000);
     }
 
     public handleInitError(error: WebcamInitError): void {
@@ -42,7 +46,7 @@ export class WebcamNewComponent implements OnInit {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
             headers: {
-                'Content-Type': 'text/plain; charset=UTF-8'
+                'Content-Type': 'text/plain; charset=UTF-8',
             },
             body: this.webcamImage.imageAsBase64, // body data type must match "Content-Type" header,
         })

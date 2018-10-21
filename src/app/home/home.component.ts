@@ -7,18 +7,7 @@ import { Emotion } from './emotion.model';
     styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit, OnChanges {
-    // public response: Emotion = {
-    //     anger: 0.02,
-    //     contempt: 0.04,
-    //     disgust: 0.04,
-    //     fear: 0.2,
-    //     happiness: 0.7,
-    //     neutral: 0,
-    //     sadness: 0.4,
-    //     surprise: 0.3,
-    // };
-    @Input()
-    public emotions: Emotion;
+    @Input() public emotions: Emotion;
     private anger: number;
     private contempt: number;
     private disgust: number;
