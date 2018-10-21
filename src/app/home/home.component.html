@@ -1,30 +1,14 @@
-<div class="jumbotron">
+<div class="jumbotron" style="padding: 50rem 2rem;">
     <div class="container">
         <div class="row no-gutters">
-          <!-- <div class="col"> -->
-            <img src="../../assets/Anger.svg" style="transform: scale(1.5); transform-origin: bottom;">
-          <!-- </div> -->
-          <!-- <div class="col"> -->
-            <img src="../../assets/Contempt.svg" style="transform: scale(0.9); transform-origin: bottom;">
-          <!-- </div> -->
-          <!-- <div class="col"> -->
-              <img src="../../assets/Happy.svg" style="transform: scale(1.2); transform-origin: bottom;">
-          <!-- </div> -->
-          <!-- <div class="col"> -->
-              <img src="../../assets/Disgust.svg" style="transform: scale(0.8); transform-origin: bottom;">
-          <!-- </div> -->
-          <!-- <div class="col"> -->
-              <img src="../../assets/Sad.svg" style="transform: scale(1.3); transform-origin: bottom;">
-          <!-- </div> -->
-          <!-- <div class="col"> -->
-              <img src="../../assets/Surprised.svg" style="transform: scale(1.0); transform-origin: bottom;">
-          <!-- </div> -->
-          <!-- <div class="col"> -->
-              <img src="../../assets/Neutral.svg" style="transform: scale(1.2); transform-origin: bottom;">
-          <!-- </div> -->
-          <!-- <div class="col"> -->
-              <img src="../../assets/Fear.svg" style="transform: scale(0.5); transform-origin: bottom;">
-          <!-- </div> -->
+            <img src="../../assets/Anger.svg" [style.transform]="'scale(' + (finalEmotion.anger ? finalEmotion.anger : 0) + ')'" style="transform-origin: bottom;">
+            <img src="../../assets/Contempt.svg" [style.transform]="'scale(' + (finalEmotion.contempt ? finalEmotion.contempt : 0) + ')'" style="transform-origin: bottom;">
+            <img src="../../assets/Happy.svg" [style.transform]="'scale(' + (finalEmotion.happiness ? finalEmotion.happiness : 0) + ')'" style="transform-origin: bottom;">
+            <img src="../../assets/Disgust.svg" [style.transform]="'scale(' + (finalEmotion.disgust ? finalEmotion.disgust : 0) + ')'" style="transform-origin: bottom;">
+            <img src="../../assets/Sad.svg" [style.transform]="'scale(' + (finalEmotion.sadness ? finalEmotion.sadness : 0) + ')'" style="transform-origin: bottom;">
+            <img src="../../assets/Surprised.svg" [style.transform]="'scale(' + (finalEmotion.surprise ? finalEmotion.surprise : 0) + ')'" style="transform-origin: bottom;">
+            <img src="../../assets/Neutral.svg" [style.transform]="'scale(' + (finalEmotion.neutral ? finalEmotion.neutral : 0) + ')'" style="transform-origin: bottom;">
+            <img src="../../assets/Fear.svg" [style.transform]="'scale(' + (finalEmotion.fear ? finalEmotion.fear : 0) + ')'" style="transform-origin: bottom;">
         </div>
         <app-grass></app-grass>
         <!-- <div class="row no-gutters">
@@ -54,7 +38,7 @@
             </div>
           </div>
       </div> -->
-      <div>
-          <div class="grass"></div>
-      </div>
-</div>
+        <div>
+            <div class="grass"></div>
+        </div>
+    </div>
