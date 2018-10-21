@@ -1,6 +1,9 @@
 <div>
-    <!-- <app-welcome></app-welcome> -->
-    <app-home [emotions]="emotions"></app-home>
-    <!-- <app-grass></app-grass> -->
-    <app-webcam-new (notify)="onNotifyClicked($event)"></app-webcam-new>
+    <div *ngIf="isWelcome">
+        <app-welcome (notify2)="onNotify2Clicked($event)"></app-welcome>
+    </div>
+    <div *ngIf="!isWelcome">
+        <app-home [emotions]="emotions"></app-home>
+        <app-webcam-new (notify)="onNotifyClicked($event)"></app-webcam-new>
+    </div>
 </div>

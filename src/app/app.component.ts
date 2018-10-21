@@ -8,11 +8,16 @@ import { Component } from '@angular/core';
 export class AppComponent {
   public title = 'emotion-radar';
   public emotions: any;
+  public isWelcome: boolean = true;
 
   /**
    * onNotifyClicked
    */
   public onNotifyClicked(emotions) {
     this.emotions = emotions;
+  }
+
+  public onNotify2Clicked(isWelcome: boolean) {
+    this.isWelcome = isWelcome;
   }
 }
