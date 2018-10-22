@@ -1,27 +1,24 @@
-# Emotional Radar
+# EmotiBoo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
+![image](https://user-images.githubusercontent.com/12979345/47322937-b0450680-d60e-11e8-8c92-33434b1b7143.png)
 
-## Development server
+### inspiration
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+A huge element of communication is nonverbal and conveyed through tone and body expression. We take this for granted, because our brains are able to automatically process it, but there are those who struggle to identify emotion and figurative language in daily life. Our goal is to use technology to bridge this gap in communication for those with social communication disorders, such as people with autism spectrum disorders. There are a lot of inventions designed to help people with physical disabilities, but less that help people with social communication disorders, and we want to change that.
 
-## Code scaffolding
+### What it does
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Emotion Radar uses complex algorithms to do what our brain automatically does - it takes images of the speaker, processes them using complex algorithms, and feedbacks the emotions the speaker is feeling to the user using easy-to-understand graphic figures we call EmotiBoos. This helps the user accurately interpret the emotions of the speaker and minimizes misunderstanding.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### How to run
+- client
+    - `git clone https://github.com/ryanefendy95/EmotiBoo.git`
+    - `cd EmotiBoo`
+    - `npm install`
+    - `ng serve`
+    - Go to `http://localhost:4200/`
+- server
+    - `git clone https://github.com/Zarkoix/EXServ.git`
+    - `cd EXServ`
+    - `npm install`
+    - `npm run start`
